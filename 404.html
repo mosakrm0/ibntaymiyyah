@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <link rel="stylesheet" href="/assests/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>صفحة غير موجودة</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assests/style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/index.html">الصفحة الرئيسية</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">الدروس المتاحة  </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item disabled" href="#">الفقه</a></li>
+            <li><a class="dropdown-item disabled" href="#">العقيدة</a></li>
+            <li><a class="dropdown-item" href="/pages/DorrosM.html">أخرى</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/pages/whoami.html">من نحن</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <div class="card">
+      <h1 class="text-center">🌟 معهد ابن تيمية للعلوم الشرعية 🌟</h1>
+      <p>
+        هذه الصفحة غير موجودة !
+      </p>
+    </div>
+  </div>
+<br>
+  <button id="theme-toggle">
+    <span id="theme-icon">🌙</span>
+  </button>
+
+  <script>
+    function toggleTheme() {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      document.documentElement.setAttribute('data-theme', currentTheme === 'dark' ? 'light' : 'dark');
+      localStorage.setItem('theme', currentTheme === 'dark' ? 'light' : 'dark');
+      document.getElementById('theme-icon').textContent = currentTheme === 'dark' ? '🌙' : '☀️';
+    }
+
+    function setTheme() {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      document.getElementById('theme-icon').textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+    }
+
+    document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+    document.addEventListener('DOMContentLoaded', setTheme);
+  </script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/script.js"></script>
+
+</body>
+</html>

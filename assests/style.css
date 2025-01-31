@@ -1,0 +1,100 @@
+:root {
+    --background-color: #fefefe;
+    --text-color: #222;
+    --navbar-bg: #004085;
+    --navbar-text: #ffffff;
+    --link-hover: #ffcc00;
+    --button-bg: #004085;
+    --button-text: #ffffff;
+    --button-hover-bg: #002752;
+    --card-bg: #ffffff;
+    --card-border: #ddd;
+    --dropdown-bg: #ffffff;
+    --dropdown-hover-bg: #ffcc00;
+    --dropdown-text: #222;
+  }
+
+  [data-theme="dark"] {
+    --background-color: #121212;
+    --text-color: #e0e0e0;
+    --navbar-bg: #1e3a5f;
+    --navbar-text: #ffffff;
+    --link-hover: #ffcc00;
+    --button-bg: #1e88e5;
+    --button-text: #ffffff;
+    --button-hover-bg: #1565c0;
+    --card-bg: #1c1c1c;
+    --card-border: #444;
+    --dropdown-bg: #1e3a5f;
+    --dropdown-hover-bg: #ffcc00;
+    --dropdown-text: #ffffff;
+  }
+
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Tajawal', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .navbar {
+    background-color: var(--navbar-bg);
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .nav-link {
+    color: var(--navbar-text) !important;
+    font-weight: 700;
+    transition: color 0.3s;
+  }
+
+  .nav-link:hover {
+    color: var(--link-hover) !important;
+  }
+
+  .dropdown-menu {
+    background-color: var(--dropdown-bg);
+    border-radius: 10px;
+  }
+
+  .dropdown-item {
+    color: var(--dropdown-text) !important;
+    font-weight: 400;
+  }
+
+  .dropdown-item:hover {
+    background-color: var(--dropdown-hover-bg);
+    color: #222 !important;
+  }
+
+  .card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    color: var(--text-color);
+  }
+
+  #theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    border: none;
+    transition: background-color 0.3s;
+  }
+
+  #theme-toggle:hover {
+    background-color: var(--button-hover-bg);
+  }
