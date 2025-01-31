@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المكتبة</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assests/style.css">
+
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+        }
+        [data-theme="dark"] {
+            background-color: #121212;
+            color: #ffffff;
+        }
+        [data-theme="dark"] .card {
+            background-color: #1e1e1e;
+            border-color: #333;
+        }
+        .book-card {
+            transition: transform 0.3s ease-in-out;
+            height: 100%;
+        }
+        .book-card:hover {
+            transform: scale(1.05);
+        }
+        .search-container {
+            margin-bottom: 20px;
+        }
+        .book-card img {
+            height: 300px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/index.html">الصفحة الرئيسية</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">الدروس المتاحة </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item disabled" href="#">الفقه</a></li>
+                <li><a class="dropdown-item disabled" href="#">العقيدة</a></li>
+                <li><a class="dropdown-item" href="/pages/DorrosM.html">أخرى</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/pages/Books.html">المكتبة</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/pages/whoami.html">من نحن</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    
+  <div class="container mt-5">
+    <h1 class="text-center">📚 مكتبة معهد ابن تيمية 📚</h1>
+    <div class="search-container text-center">
+        <input type="text" id="search-box" class="form-control w-50 mx-auto" placeholder="ابحث عن كتاب...">
+    </div>
+    <div class="row row-cols-1 row-cols-md-4 g-4" id="book-list">
+      <div class="col book-item">
+        <div class="card book-card">
+          <img src="/assests/photos/الارجوزة الميئية.jpg" class="card-img-top" alt="الارجوزة الميئية">
+          <div class="card-body text-center">
+            <h5 class="card-title">الارجوزة الميئية</h5>
+            <a target="_blank" href="https://drive.google.com/file/d/1poEfboqUfDninyPUrlN7nkXDKffD7u18/view?usp=sharing" class="btn btn-primary">قراءة</a>
+          </div>
+        </div>
+      </div>
+      <div class="col book-item">
+        <div class="card book-card">
+          <img src="/assests/photos/الاربعين النووية.jpg" class="card-img-top" alt="الاربعين النووية">
+          <div class="card-body text-center">
+            <h5 class="card-title">الاربعين النووية</h5>
+            <a target="_blank" href="https://drive.google.com/file/d/101mRN6eYcKChJeu3hB3Ejhpxopb4JLLU/view?usp=sharing" class="btn btn-primary">قراءة</a>
+          </div>
+        </div>
+      </div>
+      <div class="col book-item">
+        <div class="card book-card">
+          <img src="/assests/photos/التحفة السنية.jpg" class="card-img-top" alt="التحفة السنية">
+          <div class="card-body text-center">
+            <h5 class="card-title">التحفة السنية</h5>
+            <a target="_blank" href="https://drive.google.com/file/d/1FLLoJDGVcJPIzPZTO6fULMc70FCKfycu/view?usp=sharing" class="btn btn-primary">قراءة</a>
+          </div>
+        </div>
+      </div>
+      <div class="col book-item">
+        <div class="card book-card">
+          <img src="/assests/photos/default.jpg" class="card-img-top" alt="كتاب جديد">
+          <div class="card-body text-center">
+            <h5 class="card-title">قريبًا </h5>
+            <a target="_blank" href="#" class="btn btn-primary">قراءة</a>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <button id="theme-toggle" class="btn btn-light mt-3 position-fixed bottom-0 end-0 m-3">
+    <span id="theme-icon">🌙</span>
+  </button>
+
+  <script>
+    function toggleTheme() {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      document.getElementById('theme-icon').textContent = newTheme === 'dark' ? '☀️' : '🌙';
+    }
+
+    function setTheme() {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      document.getElementById('theme-icon').textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+    }
+
+    document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+    document.addEventListener('DOMContentLoaded', setTheme);
+
+    document.getElementById('search-box').addEventListener('input', function() {
+      let filter = this.value.toLowerCase();
+      let books = document.querySelectorAll('.book-item');
+      books.forEach(book => {
+        let title = book.querySelector('.card-title').textContent.toLowerCase();
+        book.style.display = title.includes(filter) ? '' : 'none';
+      });
+    });
+  </script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -105,7 +105,24 @@
     color: #ffffff;
     border-color: #495057;
   }
+  
   [data-theme="dark"] .list-group-item.active {
     background-color: #007bff;
     border-color: #007bff;
   }
+
+  .search-container input {
+    background-color: #ffffff;
+    color: #000;
+    border: 1px solid #ccc;
+}
+
+[data-theme="dark"] .search-container input {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border: 1px solid #555;
+}
+
+[data-theme="dark"] .search-container input::placeholder {
+    color: #bbb;
+}
