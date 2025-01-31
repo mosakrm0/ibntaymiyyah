@@ -98,3 +98,14 @@
   #theme-toggle:hover {
     background-color: var(--button-hover-bg);
   }
+
+
+  [data-theme="dark"] .list-group-item {
+    background-color: #343a40;
+    color: #ffffff;
+    border-color: #495057;
+  }
+  [data-theme="dark"] .list-group-item.active {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
