@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
@@ -37,4 +35,3 @@ function setTheme() {
 
 document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
 document.addEventListener('DOMContentLoaded', setTheme);
->>>>>>> fe4b022435c557160c3ae3e09ed41b6249567d51
