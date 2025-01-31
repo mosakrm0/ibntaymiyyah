@@ -126,3 +126,30 @@
 [data-theme="dark"] .search-container input::placeholder {
     color: #bbb;
 }
+
+body {
+  font-family: 'Tajawal', sans-serif;
+}
+[data-theme="dark"] {
+  background-color: #121212;
+  color: #ffffff;
+}
+[data-theme="dark"] .card {
+  background-color: #1e1e1e;
+  border-color: #333;
+}
+.book-card {
+  transition: transform 0.3s ease-in-out;
+  height: 100%;
+}
+.book-card:hover {
+  transform: scale(1.05);
+}
+.search-container {
+  margin-bottom: 20px;
+}
+.book-card img {
+  height: 300px;
+  object-fit: cover;
+}
+

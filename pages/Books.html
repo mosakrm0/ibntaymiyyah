@@ -1,45 +1,7 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>المكتبة</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assests/style.css">
-
-    <style>
-        body {
-            font-family: 'Tajawal', sans-serif;
-        }
-        [data-theme="dark"] {
-            background-color: #121212;
-            color: #ffffff;
-        }
-        [data-theme="dark"] .card {
-            background-color: #1e1e1e;
-            border-color: #333;
-        }
-        .book-card {
-            transition: transform 0.3s ease-in-out;
-            height: 100%;
-        }
-        .book-card:hover {
-            transform: scale(1.05);
-        }
-        .search-container {
-            margin-bottom: 20px;
-        }
-        .book-card img {
-            height: 300px;
-            object-fit: cover;
-        }
-    </style>
-</head>
-<body>
+<html lang="ar" dir="rtl" data-theme="light">
   <div id="navbar-container"></div>
-  <script src="/navbar.js"></script>
-  
+  <script src="/js/theme.js"></script>
+  <script src="/js/navbar.js"></script>
     
   <div class="container mt-5">
     <h1 class="text-center">📚 مكتبة معهد ابن تيمية 📚</h1>
@@ -87,27 +49,13 @@
     </div>
   </div>
 
-  <button id="theme-toggle" class="btn btn-light mt-3 position-fixed bottom-0 end-0 m-3">
+
+  <button id="theme-toggle">
     <span id="theme-icon">🌙</span>
   </button>
 
   <script>
-    function toggleTheme() {
-      const currentTheme = document.documentElement.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-      document.getElementById('theme-icon').textContent = newTheme === 'dark' ? '☀️' : '🌙';
-    }
 
-    function setTheme() {
-      const savedTheme = localStorage.getItem('theme') || 'light';
-      document.documentElement.setAttribute('data-theme', savedTheme);
-      document.getElementById('theme-icon').textContent = savedTheme === 'dark' ? '☀️' : '🌙';
-    }
-
-    document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
-    document.addEventListener('DOMContentLoaded', setTheme);
 
     document.getElementById('search-box').addEventListener('input', function() {
       let filter = this.value.toLowerCase();
